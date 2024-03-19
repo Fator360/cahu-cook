@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazer Pedido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="fazerpedido">
+    <img src="recursos/Logo.png" alt="logo" class="logo-fazer-pedido">
+    <div class="info">
+        <a href=""><div class="info-item"><img src="recursos/zap.png" alt="zap" class="icon"><h2 class="info-text-green">(12) 98103-7176</h2></div></a>
+        <a href=""><div class="info-item"><img src="recursos/location.png" alt="zap" class="icon"><h2 class="info-text-blue">Av Farquar 2030</h2></div></a>
+    </div>
+    
+    <form id="categorias" name="rgCategorias">
+    </form>
+
+    <div id="repeatingGroup"></div>
+    <button class="finalizar ocultarbot" id="finalizarPedido">Prosseguir</button>
+    </div>
+    <div id="finalizarpedido">
+        <header class="header">
+            <img src="recursos/voltar.png" class="icon" id="botaoVoltar" onclick=exporPedido()>
+            <h2 style="margin-left: 10px; font-family: montserrat;">Voltar</h2>
+        </header>
+        <div class="info-pedido">
+            <div id="itens">
+                <h2 class="tituloDeSecao">Resumo do seu pedido:</h2>
+                <div id="itens-bg">
+    
+                </div>
+                <img src="recursos/adicionar.png" class="icon-add" id="botaoAdicionar" onclick="exporPedido()">
+                <div class="total">
+                    <h2 class="texto-secundario">Total:</h2>
+                    <h2 id="valorTotal" class="texto-secundario"></h2>
+                </div>
+            </div>
+            <div id="receber">
+                <h2 class="tituloDeSecao">Como deseja receber o seu pedido?</h2>
+                <input type="radio" name="receber" id="entrega" value="entrega">
+                <label for="entrega">Entrega (valores de acordo com o bairro)</label>
+                <input type="radio" name="receber" id="retirada" value="retirada">
+                <label for="retirada">Retirada</label>
+            </div>
+            <div id="endereco" style="display: none;">
+                <h2 class="tituloDeSecao">Adicione seu endereço</h2>
+                <input type="text" id="endereco-input" placeholder="Endereço" >
+            </div>
+            <div id="pagamento">
+                <h2 class="tituloDeSecao">Forma de pagamento</h2>
+                <input type="radio" name="pagamento" id="dinheiro" value="dinheiro">
+                <label for="dinheiro">Dinheiro</label>
+                <input type="radio" name="pagamento" id="pix" value="pix">
+                <label for="pix">Pix</label>
+                <input type="radio" name="pagamento" id="debito" value="debito">
+                <label for="debito">Débito</label>
+                <input type="radio" name="pagamento" id="credito" value="credito">
+                <label for="credito">Crédito</label>
+                <input type="radio" name="pagamento" id="vale" value="vale">
+                <label for="vale">Vale refeição</label>
+            </div>
+            <div id="info">
+                <h2 class="tituloDeSecao">Informações adicionais</h2>
+                <input type="text" id="nome-input" placeholder="Nome" required>
+                <input type="tel" id="telefone-input" placeholder="Número de telefone" required>
+                <textarea name="observacoes" id="obs-input" rows="10" cols="30" placeholder="Observações adicionais"></textarea>
+            </div>
+            <div id="alerta">
+                <h2 class="tituloDeSecao">Por favor preencha os campos obrigatórios</h2>
+            </div>
+            <div id="concluirPedido">
+                <button class="botao-pedido" id="concluirPedido">Concluir pedido</button>
+            </div>
+        </div>
+    </div>
+    <div id="pedidoConcluido" style="display: none;">
+        <h1 class="titulo" style="color: rgb(46, 200, 148);">Pedido concluído</h1>
+        <h2 class="tituloDeSecao">Seu pedido foi enviado com sucesso</h2>
+        <button class="botao-pedido" id="botMenu">Voltar</button>
+    </div>
+    <script type="module" src="itens.js"></script>
+</body>
+</html>
